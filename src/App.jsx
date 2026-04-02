@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Trending from './assets/component/sample'
+import Trending from './component/Sample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,14 +17,14 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>React App PB</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
         </div>
        
       </section>
-
+      <Trending count={count} setCount={setCount}/>
       <div className="ticks"></div>
 
       <section id="next-steps">
@@ -110,7 +110,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-      <Trending count={count} setCount={setCount}/>
+      
     </>
   )
 }

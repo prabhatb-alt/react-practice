@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Sample from './component/Sample'
 import Navbar from './component/Navbar'
+import HomePage from './component/HomePage'
 
 function App() {
   const [menu, setMenu] = useState("Sports")
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <>
+      <HomePage/>
       <Navbar list={menu} />
       <Navbar list={abc} />
       <Sample />

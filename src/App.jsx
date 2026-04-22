@@ -3,6 +3,7 @@ import './App.css'
 import Sample from './component/Sample'
 import Navbar from './component/Navbar'
 import HomePage from './component/HomePage'
+import Contact from './component/Contact'
 
 function App() {
   const [menu, setMenu] = useState("Sports")
@@ -14,6 +15,7 @@ function App() {
       <Navbar list={menu} />
       <Navbar list={abc} />
       <Sample />
+      <Contact />
     </>
   )
 }

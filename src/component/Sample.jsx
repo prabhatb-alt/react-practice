@@ -47,7 +47,7 @@
 
 
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from "../css/Sample.module.css"
 import NavStyle from "../css/NavBar.module.css"
 // import styled from "styled-components"
@@ -58,11 +58,13 @@ import axios from "axios"
 function Sample() {
   // let count=0
   const [count, setCount]=useState(0)
-  const[name, setName]= useState("Devendra")
+  const[name, setName]= useState("Prabhat")
   const [loading, setLoading]=useState(false)
+  const inputRef = useRef(null)
 
   useEffect(()=>{
     console.log("Component is mounted")
+    inputRef.current.focus()    // Highlightus the input field when the component is mounted
     return () => {
       console.log("Component unmount")
     }
@@ -108,8 +110,10 @@ function Sample() {
       <h1>This is a sample component</h1>
       <h2>{count}</h2>
       <h3>{name}</h3>
+      <input type='text' ref={inputRef} placeholder="Enter text here..." />
+      <button onClick={() => inputRef.current.value ="Prabhat"}>Fill The Text</button>
       {loading?<h2>Loading...</h2>:""}
-      <button onClick={()=>setName("Alex")}>Change the Name</button>
+      <button onClick={()=>setName("Suhani")}>Change the Name</button>
       <button css={funcButton} onClick={increment}>Increment</button>
       <Button danger onClick={decrement}>decrement</Button>
       <button className='bg-blue-600 text-white w-18'>Sample </button>

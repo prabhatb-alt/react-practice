@@ -7,8 +7,9 @@ function Contact() {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event,data) => {
         event.preventDefault()
+        console.log("Data: ", data)
         if (!email.endsWith("krmu.edu.in")) {
             alert("Email is invalid")
             return
@@ -16,11 +17,12 @@ function Contact() {
         console.log("Name: ", name)
         console.log("Email: ", email)
         console.log("Message: ", message)
+        
     }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={()=>handleSubmit(data)}>
         <input type='text' placeholder='Enter your name' value={name} onChange={(e)=>
             {setName(e.target.value)}} />
         <input type='email' placeholder='Enter your email' value={email} onChange={(e)=>
